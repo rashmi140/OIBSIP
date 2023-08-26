@@ -4,7 +4,7 @@ public class Atm {
 public static Scanner sc=new Scanner(System.in);
 public static ArrayList<String> List=new ArrayList<>();
 
-//"transac" display the transaction history  of the user
+//transaction history  
 public static void transac(int balance) {
 	for(String i : List) {
 		System.out.println(i);
@@ -12,7 +12,7 @@ public static void transac(int balance) {
 	ask(balance);
 }
 
-//login function check the given function check username and pin are valid or not
+//login function 
 public static void login(String username,int pin) {
 	if(username.contains("Rashmi")&&pin==9090) {
 		List.add("Logged In");
@@ -23,10 +23,10 @@ public static void login(String username,int pin) {
 		login(sc.next(),sc.nextInt());
 	}
 }
-//withdraw function allows the user to withdraw a specified amountfrom their account
+//withdraw function
 public static void withdraw(int balance,int amount) {
 	if(amount>=0) {
-		balance+=amount;
+		balance-=amount;
 		System.out.println("Transaction Succesful,current balance is:"+balance);
 		List.add(amount+" rupee/'s "+amount+" withdrawn.");
 		ask(balance);
@@ -35,7 +35,7 @@ public static void withdraw(int balance,int amount) {
 		withdraw(balance,sc.nextInt());
 	}
 }
-//"deposit" to deposit a specified amount into their account
+//deposit function
 public static void deposit(int balance ,int amount) {
 	if(amount>=0) {
 	balance+=amount;
@@ -47,7 +47,7 @@ public static void deposit(int balance ,int amount) {
 	deposit(balance,sc.nextInt());
 }
 }
-//"transfer functionallows the user to transfer a specified amount to another
+//transfer function
 //user account
 public static void transfer(int balance,int amount) {
 	if((amount<=balance)&&(amount>=0)) {
@@ -115,7 +115,7 @@ public static void ask(int bal) {
 }
 public static void main(String[]args) {
 System.out.println();
-//use username is given"Rashmi"
+//use username is given"Rashmi and password 9090"
 System.out.println("Use pin  as 9090  and username Rashmi for testing");
 System.out.println("----------------LOGIN-------------");
 System.out.println("Enter the username");
